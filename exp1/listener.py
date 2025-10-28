@@ -8,5 +8,5 @@ def listener():
         rospy.init_node('listener',anonymous=True)
         rospy.subscriber('chatter,String,callbback)
         rospy.spin()
-if__name__=='__main__':
+if __name__=='__main__':
     listener()
