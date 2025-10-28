@@ -1,0 +1,17 @@
+roscd beginner_tutorials
+
+cd scripts
+
+gedit listener.py
+
+chmod +x listener.py
+
+cd ~/(workspace_name)
+
+catkin_make
+
+cd ~/(workspace_name) 
+
+source devel/setup.bash
+
+rosrun beginner_tutorials listener.py
