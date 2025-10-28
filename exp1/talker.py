@@ -11,7 +11,7 @@ def talker():
         rospy.loginfo(hello_str)
         pub.publish(hello_str)
         rate.sleep()
-if__name__=='__main__':
+if __name__=='__main__':
     try:
         talker()
         except rospy.RosInterruptExecution:
