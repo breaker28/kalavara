@@ -4,7 +4,7 @@ cd ~/(workspace name)/src
 
 catkin_create_pkg spawn rospy geometry_msgs turtlesim std_srus
 
-cd..
+cd ..
 
 catkin_make
 
