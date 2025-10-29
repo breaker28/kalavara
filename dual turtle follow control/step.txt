@@ -10,6 +10,8 @@ catkin_make
 
 source devel/setup.bash
 
+roscore [new terminal]
+
 rosrun turtlesim turtlesim_node [new terminal]
 
 rosservice call /spawn 2 2 0 turtle2 [new terminal]
@@ -17,13 +19,13 @@ rosservice call /spawn 2 2 0 turtle2 [new terminal]
 [operate turtle 1 with teleoperate]
 rosrun turtlesim turtle_teleop_key [new terminal]
 
+mkdir -p ~/(workspace name)/src/spawn/scripts
+
 cd ~/(workspace name)/src/spawn/scripts
 
 gedit follower.py
 
 chmod +x follower.py
-
-roscore [new terminal]
 
 [new terminal]
 cd ~/(workspace name)
