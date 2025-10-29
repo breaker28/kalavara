@@ -16,7 +16,7 @@ mkdir -p scripts
 
 gedit scripts/custom_teleop.py
 
-chmod +x custom_teleop.py
+chmod +x scripts/custom_teleop.py
 
 run roscore [new terminal]
 
