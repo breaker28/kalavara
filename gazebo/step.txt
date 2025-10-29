@@ -1,0 +1,81 @@
+gazebo [new terminal]
+
+open model editor form edit menu
+
+select the cube from the simple shapes options
+place the cube in the environment workspace
+
+edit base height
+right click the cube and open the link inscpector
+
+set the pose z = 0.4 from link tab
+
+set geometry field in visual tab x=2,y=1,z=0.15
+
+set geometry field in collision tab x=2,y=1,z=0.15
+
+select cylinder from the simple shape option
+place the cylinder in the environment workspace
+
+right-click the cylinder and open the link inspector
+
+set roll= 1.5707 in link tab
+
+set geometry field in visual tab radius = 0.3 , length = 0.25
+
+set geometry field in collision tab radius=0.3, length= 0.25
+
+Copy and paste the cylinder for the second wheel
+
+[Define the joints of the wheel]
+Select the joint option from the model editor tab
+Select revolute as the joint type
+Select robot base as the parent link by selecting the robot base using mouse pointer 
+Select wheel 1 as the child link by selecting the wheel 1 using mouse pointer
+Select z-axis of the wheel as the rotation axis by selecting the Joint axis = “z”
+
+[align links field] Select x= max; y= max and reverse; z= center
+
+[Define the joints of the wheel 2]
+Select the joint option from the tools
+Select revolute as the joint type.
+Select robot base as the parent link by selecting the robot base using mouse pointer
+Select wheel 2 as the child link by selecting the wheel 2 using mouse pointer
+Select z-axis of the wheel as the rotation axis by selecting the Joint axis = “z”
+
+[align links field] Select x= max; y= min and reverse; z= center
+
+Select sphere from the simple shape options and place it on the environment for creating the ball caster wheel
+Open link inspector by selecting the sphere and right-click
+Select Visual tab in the link inspector
+Enter Radius=0.2m in geometry field
+Select Collision tab in the link inspector
+Enter Radius=0.2m  in geometry field
+
+[Define the joints of the castor wheel]]
+Select the joint option from the tools
+Select ball as the joint type
+Select robot base as the parent link by selecting the robot base using mouse pointer
+Select castor wheel as the child link by selecting the sphere using mouse pointer
+
+[align links field] Select x= min; y= center; z= max
+
+Place the Depth sensing camera by selecting Depth camera from the Model Database>> http:// models.gazebosim
+Place the depth camera on the robot by manually adjusting
+
+[Define the joints of the Depth camera]
+Select the joint option from the tools.
+Select fixed as the joint type.
+Select robot base as the parent link by selecting the robot base using mouse pointer. 
+Select Depth camera as the child link by selecting the depth camera using mouse pointer.
+
+Add model plugin 
+Enter the following 
+Plugin name= follower
+Filename = libFollowerPlugin.so
+
+Save the model as “simplediffbot”
+Exit model editor
+Place the new model “simplediffbot” in the Gazebo environment
+Run the simulator using the play button at the bottom of the simulator. 
+The robot will follow the obstacle in front using the depth camera
