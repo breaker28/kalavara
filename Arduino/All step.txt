@@ -10,6 +10,8 @@ rostopic pub/led_blink std_msgs/Empty "{}"
 
 [for led glow]
 rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
+rostopic pub/external_led std_msgs/bool"data: True"
+rostopic pub/external_led std_msgs /Bool
 
 [for ultrasonic]
 rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
