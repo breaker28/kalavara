@@ -8,7 +8,7 @@ delay(3000);
 digitalWrite(LED_BuiltIn,Low);
 delay(3000);
 }
-ros::Subscriber<std_msgs::Empty>sub("Led_blink,"&messagecb);
+ros::Subscriber<std_msgs::Empty>sub("Led_blink",&messagecb);
 void setup()
 {
   PinMode(LED_BuiltIn,output);
