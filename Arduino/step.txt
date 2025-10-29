@@ -1,0 +1,25 @@
+run roscore [do it for all]
+
+[for hello world]
+runrun rosserial_python serial_node.py /dev/ttyACMD
+rostopic echo chatter
+
+[for in-built LED blink]
+rosrun rosserial_python serial_node.py_port:/dev/ttyACMD_band:=57600
+rostopic pub/led_blink std_msgs/Empty "{}"
+
+[for led glow]
+rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
+
+[for ultrasonic]
+rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
+rostopic echo/ultrasonic_distance
+
+[for servo]
+rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
+
+[for flexsensor]
+rosrun rosserial_python serial_node.py_port:=/dev/ttyACMD_band:=57600
+rostopic echo/flex_sensor_data
+rqt_plot /flex_sensor_data/data
+
