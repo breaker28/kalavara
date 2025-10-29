@@ -16,7 +16,7 @@ mkdir scripts
 
 gedit scripts/operator.py
 
-chmod +x operator.py
+chmod +x scripts/operator.py
 
 cd ~/(workspace name)
 
