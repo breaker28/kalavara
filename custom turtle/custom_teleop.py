@@ -19,8 +19,32 @@ def getkey():
     termois.tcsetattr(sys.stdin,termios.TCSADRAIN,settings)
     return key
 if __name__ = "__main__":
-  settings = termios.tcgetattr(sys.stdin)
-  rospy.init_node('turtle_custom_teleop')
-  pub = rospy.Publisher('/turtle/cmd-vel',Twist,queue_size=1)
-  speed = 2.0
-  turn = 2.0
+    settings = termios.tcgetattr(sys.stdin)
+    rospy.init_node('turtle_custom_teleop')
+    pub = rospy.Publisher('/turtle/cmd-vel',Twist,queue_size=1)
+    speed = 2.0
+    turn = 2.0
+    try :
+        print("use WASD Keys to move the turtle.Press crtl +c to quit.")
+        while not rospy.is shutdown():
+            key =getkey()
+            twist = Twist()
+            if key in key-bindings:
+                linear, angular = key-bindings[key]
+                twist.linear.x =linear*speed
+                twsit.angular.z = angular*turn
+                pub.publish(twist)
+            elif key =='\x03':#ctrl+c to quit
+                break
+            else:
+                twist.linear.x = 0
+                twist.angular.z =0
+                pub.publish(twist)
+    except rospy.RosInterruptException:
+        pass
+    finally:
+        twist = Twist()
+        twist.linear.x = 0
+        twist.angular.z = 0
+        pub.publish(twist)
+        termios.tcsetattr(sys.stdin,termios.TCSADRAIN,settings)
