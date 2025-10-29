@@ -1,35 +1,15 @@
-mkdir -p ~/(workspace name)/src
-
-cd ~/(workspace name)/src
-
-catkin_create_pkg turtle_custom_teleop rospy geometry_msgs
-
-cd ~/(workspace name)
-
-catkin_make
-
-source devel/setup.bash
-
-cd ~/(workspace name)/src/turtle_custom_teleop
-
-mkdir -p scripts
-
-gedit scripts/custom_teleop.py
-
-chmod +x custom_teleop.py
-
 run roscore [new terminal]
 
 [new terminal]
-cd (workspace name)
-
-source devel/setup.bash
-
 rosrun turtlesim turtlesim_node
 
 [new terminal]
-cd (workspace name)
+rosrun turtlesim turtle_teleop_key
 
-source devel/setup.bash
 
-rosrun turtle_custom_teleop custom_teleop.py
+[Optional]
+rosrun rqt_graph rqt_graph(In a new terminal) 
+rosnode list
+rosnode info /turtlesim
+rostopic -h
+rostopic echo /turtle1/cmd_vel(In a new terminal)
