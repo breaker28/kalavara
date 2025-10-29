@@ -1,0 +1,5 @@
+if any error occurs when checking the ros version try this command 
+
+source /opt/ros/noetic/setup.bash
+
+then check the version
