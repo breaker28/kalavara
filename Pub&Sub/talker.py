@@ -1,4 +1,4 @@
-#!/usr/bin/env Python3
+#!/usr/bin/env python3
 #license removed for brevity
 import rospy
 from std_msgs.msg import String
@@ -14,5 +14,5 @@ def talker():
 if __name__=='__main__':
     try:
         talker()
-        except rospy.RosInterruptExecution:
-            pass
+    except rospy.ROSInterruptException:
+         pass
